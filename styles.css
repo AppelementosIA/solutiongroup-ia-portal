@@ -7,8 +7,6 @@
   --border: #d9e0ea;
   --accent: #168c7f;
   --accent-strong: #0b6b61;
-  --accent-warm: #d18b17;
-  --accent-blue: #2f6fe4;
   --shadow: 0 24px 60px rgba(23, 32, 51, 0.12);
 }
 
@@ -91,6 +89,7 @@ h1 {
   gap: 18px;
   padding: 17px 18px;
   border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
   border-radius: 8px;
   color: var(--text);
   background: var(--surface);
@@ -112,18 +111,6 @@ h1 {
   box-shadow: 0 12px 30px rgba(22, 140, 127, 0.16);
   transform: translateY(-1px);
   outline: none;
-}
-
-.module-link:first-child {
-  border-left: 4px solid var(--accent);
-}
-
-.module-link:nth-child(2) {
-  border-left: 4px solid var(--accent-warm);
-}
-
-.module-link:last-child {
-  border-left: 4px solid var(--accent-blue);
 }
 
 .link-icon {

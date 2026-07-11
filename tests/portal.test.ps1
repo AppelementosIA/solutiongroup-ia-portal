@@ -2,6 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
 $indexPath = Join-Path $root "index.html"
+$stylesPath = Join-Path $root "styles.css"
 $dockerfilePath = Join-Path $root "Dockerfile"
 $nginxPath = Join-Path $root "nginx.conf"
 
@@ -17,8 +18,24 @@ function Assert-Contains {
     }
 }
 
+function Assert-NotContains {
+    param(
+        [string]$Content,
+        [string]$Unexpected,
+        [string]$Message
+    )
+
+    if ($Content.Contains($Unexpected)) {
+        throw $Message
+    }
+}
+
 if (-not (Test-Path -LiteralPath $indexPath)) {
     throw "index.html not found"
+}
+
+if (-not (Test-Path -LiteralPath $stylesPath)) {
+    throw "styles.css not found"
 }
 
 if (-not (Test-Path -LiteralPath $dockerfilePath)) {
@@ -30,6 +47,7 @@ if (-not (Test-Path -LiteralPath $nginxPath)) {
 }
 
 $html = Get-Content -LiteralPath $indexPath -Raw
+$styles = Get-Content -LiteralPath $stylesPath -Raw
 $dockerfile = Get-Content -LiteralPath $dockerfilePath -Raw
 $nginx = Get-Content -LiteralPath $nginxPath -Raw
 
@@ -41,6 +59,10 @@ Assert-Contains $html "href=`"/relatorios/`"" "Missing relatorios link"
 Assert-Contains $html "Acessar módulo de relatórios" "Missing relatorios link label"
 Assert-Contains $html "href=`"/erosao/`"" "Missing erosao link"
 Assert-Contains $html "Acessar APP de relatório de erosão" "Missing erosao link label"
+
+Assert-Contains $styles "border-left: 4px solid var(--accent);" "Module cards must use the institutional accent color"
+Assert-NotContains $styles "--accent-warm" "Module cards must not use an isolated warm accent color"
+Assert-NotContains $styles "--accent-blue" "Module cards must not use an isolated blue accent color"
 
 Assert-Contains $dockerfile "FROM nginx:" "Dockerfile must use Nginx"
 Assert-Contains $dockerfile "EXPOSE 80" "Dockerfile must expose port 80"
