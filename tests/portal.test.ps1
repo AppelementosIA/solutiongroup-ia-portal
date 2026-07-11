@@ -39,6 +39,8 @@ Assert-Contains $html "href=`"/orcamentos/`"" "Missing orcamentos link"
 Assert-Contains $html "Acessar módulo de orçamentos" "Missing orcamentos link label"
 Assert-Contains $html "href=`"/relatorios/`"" "Missing relatorios link"
 Assert-Contains $html "Acessar módulo de relatórios" "Missing relatorios link label"
+Assert-Contains $html "href=`"/erosao/`"" "Missing erosao link"
+Assert-Contains $html "Acessar APP de erosão" "Missing erosao link label"
 
 Assert-Contains $dockerfile "FROM nginx:" "Dockerfile must use Nginx"
 Assert-Contains $dockerfile "EXPOSE 80" "Dockerfile must expose port 80"
