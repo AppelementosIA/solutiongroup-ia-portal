@@ -49,8 +49,8 @@ Assert-Contains $html "href=`"/erosao/`"" "Missing erosao link"
 Assert-Contains $html "Acessar APP de relatório de erosão" "Missing erosao link label"
 
 Assert-Contains $styles "--module-accent: var(--accent);" "Orcamentos card must use the institutional accent color"
-Assert-Contains $styles ".module-link:nth-child(2) {`n  --module-accent: #d14343;`n}" "Relatorios card must use a red accent color"
-Assert-Contains $styles ".module-link:last-child {`n  --module-accent: #d18b17;`n}" "Erosao report card must use a yellow accent color"
+Assert-Contains $styles ".module-link[href=`"/relatorios/`"] {`n  --module-accent: #d14343;`n}" "Relatorios card must use a red accent color"
+Assert-Contains $styles ".module-link[href=`"/erosao/`"] {`n  --module-accent: #d18b17;`n}" "Erosao report card must use a yellow accent color"
 Assert-Contains $styles "border-left: 4px solid var(--module-accent);" "Module cards must use their own accent color"
 Assert-Contains $styles "border-color: var(--module-accent);" "Module hover and focus must use the card accent color"
 

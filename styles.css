@@ -114,11 +114,11 @@ h1 {
   outline: none;
 }
 
-.module-link:nth-child(2) {
+.module-link[href="/relatorios/"] {
   --module-accent: #d14343;
 }
 
-.module-link:last-child {
+.module-link[href="/erosao/"] {
   --module-accent: #d18b17;
 }
 
