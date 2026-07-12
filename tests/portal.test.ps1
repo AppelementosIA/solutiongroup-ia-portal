@@ -18,18 +18,6 @@ function Assert-Contains {
     }
 }
 
-function Assert-NotContains {
-    param(
-        [string]$Content,
-        [string]$Unexpected,
-        [string]$Message
-    )
-
-    if ($Content.Contains($Unexpected)) {
-        throw $Message
-    }
-}
-
 if (-not (Test-Path -LiteralPath $indexPath)) {
     throw "index.html not found"
 }
@@ -60,9 +48,11 @@ Assert-Contains $html "Acessar módulo de relatórios" "Missing relatorios link 
 Assert-Contains $html "href=`"/erosao/`"" "Missing erosao link"
 Assert-Contains $html "Acessar APP de relatório de erosão" "Missing erosao link label"
 
-Assert-Contains $styles "border-left: 4px solid var(--accent);" "Module cards must use the institutional accent color"
-Assert-NotContains $styles "--accent-warm" "Module cards must not use an isolated warm accent color"
-Assert-NotContains $styles "--accent-blue" "Module cards must not use an isolated blue accent color"
+Assert-Contains $styles "--module-accent: var(--accent);" "Orcamentos card must use the institutional accent color"
+Assert-Contains $styles ".module-link:nth-child(2) {`n  --module-accent: #d14343;`n}" "Relatorios card must use a red accent color"
+Assert-Contains $styles ".module-link:last-child {`n  --module-accent: #d18b17;`n}" "Erosao report card must use a yellow accent color"
+Assert-Contains $styles "border-left: 4px solid var(--module-accent);" "Module cards must use their own accent color"
+Assert-Contains $styles "border-color: var(--module-accent);" "Module hover and focus must use the card accent color"
 
 Assert-Contains $dockerfile "FROM nginx:" "Dockerfile must use Nginx"
 Assert-Contains $dockerfile "EXPOSE 80" "Dockerfile must expose port 80"

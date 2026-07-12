@@ -82,6 +82,7 @@ h1 {
 }
 
 .module-link {
+  --module-accent: var(--accent);
   display: flex;
   min-height: 58px;
   align-items: center;
@@ -89,7 +90,7 @@ h1 {
   gap: 18px;
   padding: 17px 18px;
   border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--module-accent);
   border-radius: 8px;
   color: var(--text);
   background: var(--surface);
@@ -106,11 +107,19 @@ h1 {
 
 .module-link:hover,
 .module-link:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent-strong);
-  box-shadow: 0 12px 30px rgba(22, 140, 127, 0.16);
+  border-color: var(--module-accent);
+  color: var(--text);
+  box-shadow: 0 12px 30px rgba(23, 32, 51, 0.16);
   transform: translateY(-1px);
   outline: none;
+}
+
+.module-link:nth-child(2) {
+  --module-accent: #d14343;
+}
+
+.module-link:last-child {
+  --module-accent: #d18b17;
 }
 
 .link-icon {
