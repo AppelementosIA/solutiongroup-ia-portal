@@ -118,6 +118,10 @@ h1 {
   --module-accent: #d14343;
 }
 
+.module-link[href="/documental"] {
+  --module-accent: #2563a6;
+}
+
 .module-link[href="https://ia.solutiongroup.com.br/erosao"] {
   --module-accent: #d18b17;
 }
