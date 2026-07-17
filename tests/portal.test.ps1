@@ -77,6 +77,7 @@ Assert-Contains $dockerfile "EXPOSE 80" "Dockerfile must expose port 80"
 Assert-Contains $dockerfile "nginx.conf" "Dockerfile must copy nginx.conf"
 
 Assert-Contains $nginx "listen 80;" "Nginx must listen on port 80"
+Assert-Contains $nginx "absolute_redirect off;" "OAuth redirects must stay relative behind the EasyPanel HTTPS proxy"
 Assert-Contains $nginx "root /usr/share/nginx/html;" "Nginx root must point to static html directory"
 Assert-Contains $nginx "location = /login" "Nginx must serve the exact central login bridge route"
 Assert-Contains $nginx "/documental/api/auth/microsoft/callback" "Login bridge must route Documental callbacks"
