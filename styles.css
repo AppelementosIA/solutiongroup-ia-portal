@@ -105,6 +105,10 @@ h1 {
     box-shadow 160ms ease;
 }
 
+.module-link[hidden] {
+  display: none;
+}
+
 .module-link:hover,
 .module-link:focus-visible {
   border-color: var(--module-accent);

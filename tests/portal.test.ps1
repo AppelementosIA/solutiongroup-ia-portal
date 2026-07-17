@@ -70,6 +70,7 @@ Assert-Contains $styles ".module-link[href=`"/documental`"] {`n  --module-accent
 Assert-Contains $styles ".module-link[href=`"https://ia.solutiongroup.com.br/erosao`"] {`n  --module-accent: #d18b17;`n}" "Erosao report card must use a yellow accent color"
 Assert-Contains $styles "border-left: 4px solid var(--module-accent);" "Module cards must use their own accent color"
 Assert-Contains $styles "border-color: var(--module-accent);" "Module hover and focus must use the card accent color"
+Assert-Contains $styles ".module-link[hidden] {`n  display: none;`n}" "Hidden module cards must override the flex layout"
 
 Assert-Contains $dockerfile "FROM nginx:" "Dockerfile must use Nginx"
 Assert-Contains $dockerfile "EXPOSE 80" "Dockerfile must expose port 80"
