@@ -6,47 +6,72 @@
     <title>Solution Group IA</title>
     <meta
       name="description"
-      content="Portal raiz da Solution Group IA para acesso aos módulos de implantação."
+      content="Portal da Solution Group IA para acesso às plataformas e à administração central."
     >
     <link rel="icon" href="/assets/solutiongroup-ia-mark.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
     <main class="portal" aria-label="Portal Solution Group IA">
-      <section class="portal-panel">
-        <img
-          class="brand-mark"
-          src="/assets/solutiongroup-ia-mark.svg"
-          alt=""
-          width="72"
-          height="72"
-          aria-hidden="true"
-        >
-        <h1>Solution Group IA</h1>
-        <p class="lead">Portal de implantação de inteligência artificial em preparação.</p>
+      <header class="portal-header">
+        <a class="brand" href="/" aria-label="Página inicial da Solution Group IA">
+          <img
+            class="brand-mark"
+            src="/assets/solutiongroup-ia-mark.svg"
+            alt=""
+            width="48"
+            height="48"
+            aria-hidden="true"
+          >
+          <span><strong>Solution Group IA</strong><small>Portal corporativo</small></span>
+        </a>
+        <a class="header-admin-link" href="/gestao-ia">
+          <span>Administração e acessos</span>
+          <span aria-hidden="true">-&gt;</span>
+        </a>
+      </header>
 
+      <section class="portal-intro">
+        <p class="eyebrow">Ambiente de trabalho</p>
+        <h1>Solution Group IA</h1>
+        <p>Portal de implantação de inteligência artificial em preparação. Escolha uma plataforma para continuar ou acesse a gestão central.</p>
+      </section>
+
+      <section class="module-section" aria-labelledby="applications-title">
+        <div class="section-heading">
+          <div><h2 id="applications-title">Aplicações</h2><p>Ferramentas operacionais disponíveis no ambiente corporativo.</p></div>
+        </div>
         <nav class="module-links" aria-label="Módulos disponíveis">
           <a class="module-link" href="/orcamentos/">
-            <span>Acessar módulo de orçamentos</span>
+            <span class="module-index" aria-hidden="true">01</span>
+            <span class="module-copy"><strong>Orçamentos</strong><small>Propostas, preços e composição de orçamentos.</small></span>
             <span class="link-icon" aria-hidden="true">-&gt;</span>
           </a>
           <a class="module-link" href="/relatorios/">
-            <span>Acessar módulo de relatórios</span>
+            <span class="module-index" aria-hidden="true">02</span>
+            <span class="module-copy"><strong>Relatórios</strong><small>Produção e acompanhamento de relatórios técnicos.</small></span>
             <span class="link-icon" aria-hidden="true">-&gt;</span>
           </a>
           <a class="module-link" href="/documental">
-            <span>Acessar Copiloto Documental</span>
+            <span class="module-index" aria-hidden="true">03</span>
+            <span class="module-copy"><strong>Copiloto Documental</strong><small>Preparação e revisão assistida de documentos.</small></span>
             <span class="link-icon" aria-hidden="true">-&gt;</span>
           </a>
           <a class="module-link" href="https://ia.solutiongroup.com.br/erosao">
-            <span>Acessar APP de relatório de erosão</span>
-            <span class="link-icon" aria-hidden="true">-&gt;</span>
-          </a>
-          <a class="module-link" href="/gestao-ia">
-            <span>Acessar gestão central de custos de IA</span>
+            <span class="module-index" aria-hidden="true">04</span>
+            <span class="module-copy"><strong>APP de relatório de erosão</strong><small>Elaboração do relatório especializado de erosão.</small></span>
             <span class="link-icon" aria-hidden="true">-&gt;</span>
           </a>
         </nav>
+      </section>
+
+      <section class="management-entry" aria-labelledby="management-title">
+        <div>
+          <p class="eyebrow">Gestão central</p>
+          <h2 id="management-title">Administração e acessos</h2>
+          <p>Gerencie pessoas, permissões por plataforma, limites e custos de inteligência artificial.</p>
+        </div>
+        <a href="/gestao-ia"><span>Entrar na gestão</span><span aria-hidden="true">-&gt;</span></a>
       </section>
     </main>
   </body>
