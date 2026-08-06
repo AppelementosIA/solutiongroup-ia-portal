@@ -79,6 +79,11 @@ try {
     Assert-Equal ([int]$documental.StatusCode) 302 "Documental callback must redirect"
     Assert-Equal (Get-PathAndQuery $documental.Headers.Location) "/documental/api/auth/microsoft/callback$documentalQuery" "Documental callback must preserve the original query"
 
+    $gestaoQuery = "?code=admin-code&state=gestao-ia.XYz%2F-_&session_state=central%2Fcost"
+    $gestao = $client.GetAsync("/login$gestaoQuery").GetAwaiter().GetResult()
+    Assert-Equal ([int]$gestao.StatusCode) 302 "Central AI cost callback must redirect"
+    Assert-Equal (Get-PathAndQuery $gestao.Headers.Location) "/gestao-ia/api/auth/microsoft/callback$gestaoQuery" "Central AI cost callback must preserve the original query"
+
     $orcamentosQuery = "?code=budget-code&state=orcamentos.123&scope=openid%20profile"
     $orcamentos = $client.GetAsync("/login$orcamentosQuery").GetAwaiter().GetResult()
     Assert-Equal ([int]$orcamentos.StatusCode) 302 "Orcamentador callback must redirect"

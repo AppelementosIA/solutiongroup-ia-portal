@@ -130,6 +130,10 @@ h1 {
   --module-accent: #d18b17;
 }
 
+.module-link[href="/gestao-ia"] {
+  --module-accent: #6f42c1;
+}
+
 .link-icon {
   flex: 0 0 auto;
   color: currentColor;
